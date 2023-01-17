@@ -56,4 +56,7 @@ tipo_lista cola( tipo_lista lista );
 // muestra el contenido de la lista en la salida estandar 'std'
 void mostrar( tipo_lista lista );
 
+int reemplazar (tipo_lista lista, int nuevo, int posicion);
+
+int intercambiar(tipo_lista lista, int posicion_a, int posicion_b);
 
