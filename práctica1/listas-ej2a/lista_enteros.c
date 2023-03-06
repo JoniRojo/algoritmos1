@@ -208,17 +208,30 @@ void mostrar( tipo_lista lista ){
 }
 
 int reemplazar (tipo_lista lista, int nuevo, int posicion){
+	if ( posicion < 0 || posicion > list->size || is_empty( list ) ){
+		return -1;
+	}
+
 	nodo cursor = lista->cabeza;
+
 	for (int i = 0; i < posicion ; i++ ){
 		cursor = cursor->siguiente;
 	};
+
 	int anterior = cursor->valor;
 	cursor->valor = nuevo;
+	
 	return anterior;
 }
 
-int intercambiar(tipo_lista lista, int posicion_a, int posicion_b){
+void intercambiar(tipo_lista lista, int posicion_a, int posicion_b){
+	if ( posicion_a < 0 || posicion_b < 0 || posicion_a > list->size || posicion_b> list->size || is_empty( list ) ){
+		return -1;
+	}
+	
 	nodo aux = lista->cabeza;
+
+	//forma blito mas bonita, pero usa un metodo obtener(lista,pos)
 	for (int i = 0; i < posicion_a ; i++ ){
 		aux = aux->siguiente;
 	};
@@ -226,10 +239,24 @@ int intercambiar(tipo_lista lista, int posicion_a, int posicion_b){
 	for (int i = 0; i < posicion_b ; i++ ){
 		aux = aux->siguiente;
 	};
+
 	int valoraux = aux->valor;
 	aux->valor= aux2->valor;
 	aux2->valor= valoraux;
 	free(aux);
 	free(aux2);
 	return 0;
+}
+
+
+int masPositivos( tipo_lista lista){
+	int a;
+	nodo cursor = lista->cabeza;
+	while (cursor != NULL){
+		if (cursor->content >=0){
+			a++;
+		}
+		cursor = cursor->next;
+	}
+	return (a > (list->size) - a );
 }

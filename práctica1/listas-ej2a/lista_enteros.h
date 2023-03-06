@@ -60,3 +60,4 @@ int reemplazar (tipo_lista lista, int nuevo, int posicion);
 
 int intercambiar(tipo_lista lista, int posicion_a, int posicion_b);
 
+int masPositivos(tipo_lista lista);
