@@ -112,9 +112,9 @@ public class Grafo<T> implements IGrafo<T>{
         pila.push(x);                                       //pusheo x a la pila
         x.marcar();                                         //lo marco
         lista.add("V" + x.getPos());                        //lo proceso
-        while(!pila.isEmpty()){                             //mientras la lista no este vacia
+        while(!pila.isEmpty()){                             //mientras la pila no este vacia
             Vertice<T> tope = pila.peek();                  //tomo el tope de la pila sin sacarlo de ella
-            Vertice<T> w = tope.AdyacenteNoVisitado();      //en w guardo un adyacente no visitado
+            Vertice<T> w = tope.AdyacenteNoVisitado();      //en w guardo un adyacente no visitado del tope
             if(w!= null){                                   //si tengo alguno
                 pila.push(w);                               //lo pusheo en la pila
                 w.marcar();                                 //lo marco
@@ -152,7 +152,7 @@ public class Grafo<T> implements IGrafo<T>{
         while(!cola.isEmpty()){                             //mientras la cola no este vacia
             Vertice<T> w = cola.poll();                    // toma y saca de la cola
             lista.add("V" + w.getPos());                   //procesa
-            Vertice<T> u = w.AdyacenteNoVisitado();         //guardo en un vertice u, un adyacente de w
+            Vertice<T> u = w.AdyacenteNoVisitado();         //guardo en un vertice u, un adyacente no visitado de w
             while(u != null){                               //mieentras tenga adyacentes
                 cola.add(u);                                //lo agrego a la cola
                 u.marcar();                                 //lo marco

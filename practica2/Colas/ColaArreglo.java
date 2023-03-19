@@ -6,6 +6,7 @@ public class ColaArreglo<T> implements Cola<T>{
     /*
     En esta implementacion [Front                   Back] por el back entran, es decir aumentas el back
                                                           por el front salen, tmb aunmentas el front
+    Tiene un increment que si el sig es fuera de rango, le pone 0, entonces como que encola al principio
     */
 
     private T[] arreglo;
@@ -39,7 +40,7 @@ public class ColaArreglo<T> implements Cola<T>{
         back = -1;
     }
 
-    //pop algo asi, el que esta primero juira
+    //dequeue, el que esta primero juira
     public T desencolar(){
         if( esVacia() )
                 throw new IllegalStateException( "Arreglo vacio" );
@@ -60,7 +61,7 @@ public class ColaArreglo<T> implements Cola<T>{
         return arreglo[front];
     }
 
-    //agregue uno a la cola
+    //agregue uno a la cola, enqueue
     public void encolar( T x ){
         if( size == arreglo.length )
             doubleQueue( );

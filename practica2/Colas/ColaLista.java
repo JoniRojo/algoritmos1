@@ -5,6 +5,12 @@ public class ColaLista<T> implements Cola<T> {
     private Nodo<T> back;
     private int size;
 
+    /*
+     * [front          back] 
+     * front back a puntan a lo mismo al principio
+     * para encolar back -> ultimo hasta el momento, dps utlhastael monete -> utlimoposta y back tmb lo apunta
+     * para desencolar front -> front.getnext
+     */
     public ColaLista(){
         front = back = null;
         size = 0;

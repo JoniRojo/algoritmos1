@@ -41,7 +41,8 @@ public class ColaCircularArreglo<T> implements Cola<T> {
     public int getEnd(){
         return end;
     }
-
+    
+    //enqueue
     public void encolar(T x) {
         if( size == MAX){
             throw new IllegalStateException("La cola esta llena!");
